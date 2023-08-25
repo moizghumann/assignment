@@ -43,14 +43,17 @@ const Layout = () => {
 
     return (
         <>
-            <div className=' h-screen grid place-items-center bg-[#111111] px-12'>
-                <SearchData onSearch={handleSearch} />
-
-                <AddData onSubmit={handleAddData} />
+            <div className=' h-fit bg-[#f4a261] px-12'>
+                <div>
+                    <SearchData onSearch={handleSearch} />
+                    <AddData onSubmit={handleAddData} />
+                </div>
 
                 <DataTable updatedData={filteredData.length > 0 ? filteredData : data}
                     onUpdate={(fetched) => setData(fetched)}
                     onDelete={handleDelete} />
+
+
             </div>
 
         </>

@@ -24,41 +24,55 @@ const AddData = ({ onSubmit }: FormProps) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className=' mb-4 grid place-items-center gap-3'>
+      <div className=' flex flex-col items-start gap-3 w-full my-10'>
 
         {/* name input field */}
-        <label className=' font-medium text-start text-lg  text-white' htmlFor='name'>
-          Name
-        </label>
-        <input type='text'
-          id='name'
-          {...register('name')} />
-        {errors.name &&
-          <span>{errors.name.message}</span>}
+        <div className=' flex flex-col items-start'>
+          <label className='text-start text-4xl font-bold italic text-[#264653] pb-3' htmlFor='name'>
+            Name
+          </label>
+          <input type='text'
+            className=' border-[#e76f51] border-2 rounded-2xl w-96 pb-4 mb-5'
+            id='name'
+            {...register('name')} />
+          {errors.name &&
+            <span>{errors.name.message}</span>}
+        </div>
+
 
         {/* email input field */}
-        <label className=' font-medium text-left text-lg  text-white' htmlFor='email'>
-          Email
-        </label>
-        <input type='text'
-          id='email'
-          {...register('email')} />
-        {errors.email &&
-          <span>{errors.email.message}</span>}
+        <div className=' flex flex-col items-start'>
+          <label className='text-start text-4xl font-bold italic text-[#264653] pb-3' htmlFor='email'>
+            Email
+          </label>
+          <input type='text'
+            className=' border-[#e76f51] border-2 rounded-2xl w-96 pb-4 mb-5'
+            id='email'
+            {...register('email')} />
+          {errors.email &&
+            <span>{errors.email.message}</span>}
+        </div>
 
         {/* body input field */}
-        <label className=' font-medium text-left text-lg  text-white' htmlFor='body'>
-          Body
-        </label>
-        <input type='text'
-          id='body'
-          {...register('body')} />
-        {errors.body &&
-          <span>{errors.body.message}</span>}
+        <div className=' flex flex-col items-start'>
+          <label className='text-start text-4xl font-bold italic text-[#264653] pb-3' htmlFor='body'>
+            Body
+          </label>
+          <input type='text'
+            className=' border-[#e76f51] border-2 rounded-2xl w-96 pb-10 mb-5'
+            id='body'
+            {...register('body')} />
+          {errors.body &&
+            <span>{errors.body.message}</span>}
+        </div>
+
+        <button type='submit'
+          className="inline-block rounded-2xl bg-[#2a9d8f] px-8 py-3 text-lg font-medium text-white hover:border-4 hover:border-[#264653] hover:text-2xl  border-[3px] border-[#264653] transition hover:rotate-2 hover:scale-110 focus:outline-none focus:ring active:bg-indigo-500"
+        >
+          ADD
+        </button>
 
       </div>
-
-      <button type='submit' className=' text-white'>Add</button>
     </form>
   )
 }
