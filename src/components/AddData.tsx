@@ -32,7 +32,8 @@ const AddData = ({ onSubmit }: FormProps) => {
             Name
           </label>
           <input type='text'
-            className=' border-[#e76f51] border-2 rounded-2xl w-96 pb-4 mb-5 focus:outline-none'
+            className=' border-[#264653] text-[#264653] text-base font-semibold border-2 rounded-2xl w-96 py-2 px-4 mb-5 focus:outline-none placeholder:italic placeholder:text-[#264653] placeholder:text-base placeholder:font-semibold placeholder:opacity-80 bg-[#f4a261]'
+            placeholder='naval ravikant'
             id='name'
             {...register('name')} />
           {errors.name &&
@@ -46,7 +47,8 @@ const AddData = ({ onSubmit }: FormProps) => {
             Email
           </label>
           <input type='text'
-            className=' border-[#e76f51] border-2 rounded-2xl w-96 pb-4 mb-5 focus:outline-none'
+            className=' border-[#264653] text-[#264653] text-base font-semibold border-2 rounded-2xl w-96 py-2 px-4 mb-5 focus:outline-none placeholder:italic placeholder:text-[#264653] placeholder:text-base placeholder:font-semibold placeholder:opacity-80 bg-[#f4a261]'
+            placeholder='naval@athens.com'
             id='email'
             {...register('email')} />
           {errors.email &&
@@ -55,16 +57,18 @@ const AddData = ({ onSubmit }: FormProps) => {
 
         {/* body input field */}
         <div className=' flex flex-col items-start'>
-          <label className='text-start text-4xl font-bold italic text-[#264653] pb-3' htmlFor='body'>
+          <label className='text-start text-4xl font-bold italic text-[#264653] py-3' htmlFor='body'>
             Body
           </label>
           <input type='text'
-            className=' border-[#e76f51] border-2 rounded-2xl w-96 pb-10 mb-5 focus:outline-none'
+            className=' border-[#264653] text-[#264653] text-base font-semibold border-2 rounded-2xl w-[570px] py-2 pb-12 px-4 mb-5 focus:outline-non placeholder:italic placeholder:text-[#264653] placeholder:text-base placeholder:font-semibold placeholder:opacity-80 bg-[#f4a261] focus:outline-none'
+            placeholder='greatest angel investor + modern day philosopher and entreprenuer...'
             id='body'
             {...register('body')} />
           {errors.body &&
             <span>{errors.body.message}</span>}
         </div>
+
 
         <button type='submit'
           className="inline-block rounded-2xl bg-[#2a9d8f] px-8 py-3 text-lg font-medium text-white hover:border-4 hover:border-[#264653] hover:text-2xl  border-[3px] border-[#264653] transition hover:rotate-2 hover:scale-110 focus:ring active:bg-indigo-500 focus:outline-none"
