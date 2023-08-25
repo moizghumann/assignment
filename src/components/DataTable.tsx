@@ -34,7 +34,7 @@ const DataTable = ({ onUpdate, updatedData, onDelete }: DataProps) => {
     }, []);
 
     return (
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-28">
             <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead className=" text-[#fefae0] uppercase bg-[#2a9d8f] font-bold text-xl">
                     <tr>
