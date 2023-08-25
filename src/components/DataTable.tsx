@@ -36,7 +36,7 @@ const DataTable = ({ onUpdate, updatedData, onDelete }: DataProps) => {
     return (
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead className="text-xs text-gray-700 uppercase bg-[#f4a261] dark:bg-[#f4a261]dark:text-gray-400">
+                <thead className=" text-[#fefae0] uppercase bg-[#2a9d8f] font-bold text-xl">
                     <tr>
                         <th scope="col" className="px-6 py-3">
                             ID
@@ -58,14 +58,13 @@ const DataTable = ({ onUpdate, updatedData, onDelete }: DataProps) => {
                 <tbody>
 
                     {updatedData.map(eachItem =>
-                        <tr key={eachItem.id} className="bg-white border-b dark:bg-[#e76f51]
-                        dark:border-gray-700 hover:bg-[#e9c46a] dark:hover:bg-[#e9c46a]">
+                        <tr key={eachItem.id} className="bg-[#264653] border-b text-base">
                             <td className="px-6 py-4">{eachItem.id}</td>
                             <td className="px-6 py-4">{eachItem.name}</td>
                             <td className="px-6 py-4">{eachItem.email}</td>
                             <td className="px-6 py-4">{eachItem.body}</td>
                             <td><button onClick={() => { onDelete(eachItem.id) }}
-                                className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                className="inline-block rounded-2xl bg-[#e9c46a] px-4 py-2 text-base font-medium text-[#264653] hover:border-2 hover:border-[#264653] border-[3px] border-[#264653] transition hover:rotate-2 hover:scale-110 focus:outline-none focus:ring active:bg-indigo-500 mr-5"
                             >
                                 Delete
                             </button>
