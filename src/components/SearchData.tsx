@@ -11,12 +11,11 @@ const SearchData = ({ onSearch }: SearchProps) => {
     };
 
     return (
-        <div className='flex justify-start items-center gap-4'>
-            <h4 className='text-lg text-white'>Search</h4>
+        <div className='  w-full'>
             <input
-                className='border-2 rounded-lg w-48 h-fit text-white'
+                className=' border-[3px] border-[#264653] w-full h-full py-5 mb-12 rounded-3xl pl-3 bg-[#f4a261] text-[#264653] placeholder:italic placeholder:text-[#264653] placeholder:text-lg placeholder:font-semibold placeholder:opacity-80'
                 onChange={handleInputChange}
-                placeholder='Search for name'
+                placeholder='Search for name..'
             />
         </div>
     );

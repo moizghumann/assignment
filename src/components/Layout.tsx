@@ -43,7 +43,7 @@ const Layout = () => {
 
     return (
         <>
-            <div className=' h-fit bg-[#f4a261] px-12'>
+            <div className=' h-fit bg-[#f4a261] px-12 py-10'>
                 <div>
                     <SearchData onSearch={handleSearch} />
                     <AddData onSubmit={handleAddData} />
