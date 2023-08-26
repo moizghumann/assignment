@@ -32,7 +32,7 @@ const AddData = ({ onSubmit }: FormProps) => {
             Name
           </label>
           <input type='text'
-            className=' border-[#264653] text-[#264653] text-base font-semibold rounded-2xl w-96 py-2 px-4 mb-5 focus:outline-none placeholder:italic placeholder:text-[#264653] placeholder:text-base placeholder:font-semibold placeholder:opacity-60 bg-[#f4a261] border-[3px] vsm:w-full '
+            className=' border-[#264653] text-[#264653] text-base font-semibold rounded-2xl md:w-96 py-2 px-4 mb-5 focus:outline-none placeholder:italic placeholder:text-[#264653] placeholder:text-base placeholder:font-semibold placeholder:opacity-60 bg-[#f4a261] border-[3px] vsm:w-full '
             placeholder='naval ravikant'
             id='name'
             {...register('name')} />
@@ -47,7 +47,7 @@ const AddData = ({ onSubmit }: FormProps) => {
             Email
           </label>
           <input type='text'
-            className=' border-[#264653] text-[#264653] text-base font-semibold rounded-2xl w-96 py-2 px-4 mb-5 focus:outline-none placeholder:italic placeholder:text-[#264653] placeholder:text-base placeholder:font-semibold placeholder:opacity-60 bg-[#f4a261] border-[3px] vsm:w-full'
+            className=' border-[#264653] text-[#264653] text-base font-semibold rounded-2xl md:w-96 py-2 px-4 mb-5 focus:outline-none placeholder:italic placeholder:text-[#264653] placeholder:text-base placeholder:font-semibold placeholder:opacity-60 bg-[#f4a261] border-[3px] vsm:w-full'
             placeholder='naval@athens.com'
             id='email'
             {...register('email')} />
@@ -61,7 +61,7 @@ const AddData = ({ onSubmit }: FormProps) => {
             Body
           </label>
           <input type='text'
-            className=' border-[#264653] text-[#264653] text-base font-semibold rounded-2xl w-[570px] py-2 pb-12 px-4 mb-5 focus:outline-non placeholder:italic placeholder:text-[#264653] placeholder:text-base placeholder:font-semibold placeholder:opacity-60 bg-[#f4a261] border-[3px] vsm:w-full focus:outline-none'
+            className=' border-[#264653] text-[#264653] text-base font-semibold rounded-2xl md:w-[570px] py-2 pb-12 px-4 mb-5 focus:outline-non placeholder:italic placeholder:text-[#264653] placeholder:text-base placeholder:font-semibold placeholder:opacity-60 bg-[#f4a261] border-[3px] vsm:w-full focus:outline-none'
             placeholder='greatest angel investor + modern day philosopher and entreprenuer...'
             id='body'
             {...register('body')} />
