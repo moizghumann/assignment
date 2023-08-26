@@ -24,7 +24,7 @@ const AddData = ({ onSubmit }: FormProps) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className=' flex flex-col items-start gap-3 w-full my-10'>
+      <div className=' flex flex-col items-start gap-3 w-full my-10 mb-40 vsm:mt-0'>
 
         {/* name input field */}
         <div className=' flex flex-col items-start'>
@@ -32,7 +32,7 @@ const AddData = ({ onSubmit }: FormProps) => {
             Name
           </label>
           <input type='text'
-            className=' border-[#264653] text-[#264653] text-base font-semibold border-2 rounded-2xl w-96 py-2 px-4 mb-5 focus:outline-none placeholder:italic placeholder:text-[#264653] placeholder:text-base placeholder:font-semibold placeholder:opacity-80 bg-[#f4a261]'
+            className=' border-[#264653] text-[#264653] text-base font-semibold rounded-2xl w-96 py-2 px-4 mb-5 focus:outline-none placeholder:italic placeholder:text-[#264653] placeholder:text-base placeholder:font-semibold placeholder:opacity-60 bg-[#f4a261] border-[3px] vsm:w-full '
             placeholder='naval ravikant'
             id='name'
             {...register('name')} />
@@ -47,7 +47,7 @@ const AddData = ({ onSubmit }: FormProps) => {
             Email
           </label>
           <input type='text'
-            className=' border-[#264653] text-[#264653] text-base font-semibold border-2 rounded-2xl w-96 py-2 px-4 mb-5 focus:outline-none placeholder:italic placeholder:text-[#264653] placeholder:text-base placeholder:font-semibold placeholder:opacity-80 bg-[#f4a261]'
+            className=' border-[#264653] text-[#264653] text-base font-semibold rounded-2xl w-96 py-2 px-4 mb-5 focus:outline-none placeholder:italic placeholder:text-[#264653] placeholder:text-base placeholder:font-semibold placeholder:opacity-60 bg-[#f4a261] border-[3px] vsm:w-full'
             placeholder='naval@athens.com'
             id='email'
             {...register('email')} />
@@ -61,7 +61,7 @@ const AddData = ({ onSubmit }: FormProps) => {
             Body
           </label>
           <input type='text'
-            className=' border-[#264653] text-[#264653] text-base font-semibold border-2 rounded-2xl w-[570px] py-2 pb-12 px-4 mb-5 focus:outline-non placeholder:italic placeholder:text-[#264653] placeholder:text-base placeholder:font-semibold placeholder:opacity-80 bg-[#f4a261] focus:outline-none'
+            className=' border-[#264653] text-[#264653] text-base font-semibold rounded-2xl w-[570px] py-2 pb-12 px-4 mb-5 focus:outline-non placeholder:italic placeholder:text-[#264653] placeholder:text-base placeholder:font-semibold placeholder:opacity-60 bg-[#f4a261] border-[3px] vsm:w-full focus:outline-none'
             placeholder='greatest angel investor + modern day philosopher and entreprenuer...'
             id='body'
             {...register('body')} />
@@ -69,12 +69,13 @@ const AddData = ({ onSubmit }: FormProps) => {
             <span>{errors.body.message}</span>}
         </div>
 
-
-        <button type='submit'
-          className="inline-block rounded-2xl bg-[#2a9d8f] px-8 py-3 text-lg font-medium text-white hover:border-4 hover:border-[#264653] hover:text-2xl  border-[3px] border-[#264653] transition hover:rotate-2 hover:scale-110 focus:ring active:bg-indigo-500 focus:outline-none"
-        >
-          ADD
-        </button>
+        <div className=' h-full'>
+          <button type='submit'
+            className=" absolute inline-block rounded-2xl bg-[#2a9d8f] px-8 py-3 text-lg font-medium text-white hover:border-4 hover:border-[#264653] hover:text-2xl  border-[4px] border-[#264653] transition duration-300 ease-in-out hover:rotate-2 hover:scale-110 focus:ring focus:outline-none"
+          >
+            ADD
+          </button>
+        </div>
 
       </div>
     </form>

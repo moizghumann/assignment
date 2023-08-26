@@ -34,7 +34,7 @@ const DataTable = ({ onUpdate, updatedData, onDelete }: DataProps) => {
     }, []);
 
     return (
-        <div className="relative overflow-x-auto shadow-2xl sm:rounded-2xl mt-28">
+        <div className="relative overflow-x-auto shadow-2xl sm:rounded-3xl vsm:rounded-2xl mt-28 border-4 border-[#264653]">
             <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead className=" text-[#fefae0] uppercase bg-[#2a9d8f] font-bold text-xl">
                     <tr>
@@ -50,8 +50,10 @@ const DataTable = ({ onUpdate, updatedData, onDelete }: DataProps) => {
                         <th scope="col" className="px-6 py-3">
                             Body
                         </th>
-                        <th scope="col" className="px-6 py-3">
-                            <span className="sr-only">Delete</span>
+                        <th scope="col" className="px-6 py-3 pl-2">
+                            <span>
+                                Action
+                            </span>
                         </th>
                     </tr>
                 </thead>
