@@ -6,7 +6,8 @@ export default {
   ],
   theme: {
     screens: {
-      vsm: "360px"
+      vsm: "360px",
+      md: "768px"
     },
     extend: {},
   },
