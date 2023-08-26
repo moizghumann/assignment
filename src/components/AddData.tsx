@@ -28,7 +28,7 @@ const AddData = ({ onSubmit }: FormProps) => {
 
         {/* name input field */}
         <div className=' flex flex-col items-start'>
-          <label className='text-start text-4xl font-bold italic text-[#264653] pb-3' htmlFor='name'>
+          <label className='text-start md:text-4xl font-bold italic text-[#264653] md:pb-2 vsm:text-3xl vsm:pb-1' htmlFor='name'>
             Name
           </label>
           <input type='text'
@@ -43,11 +43,11 @@ const AddData = ({ onSubmit }: FormProps) => {
 
         {/* email input field */}
         <div className=' flex flex-col items-start'>
-          <label className='text-start text-4xl font-bold italic text-[#264653] pb-3' htmlFor='email'>
+          <label className='text-start md:text-4xl font-bold italic text-[#264653] md:pb-2 vsm:text-3xl vsm:pb-1' htmlFor='email'>
             Email
           </label>
           <input type='text'
-            className=' border-[#264653] text-[#264653] text-base font-semibold rounded-2xl md:w-96 py-2 px-4 mb-5 focus:outline-none placeholder:italic placeholder:text-[#264653] placeholder:text-base placeholder:font-semibold placeholder:opacity-60 bg-[#f4a261] border-[3px] vsm:w-full'
+            className=' border-[#264653] text-[#264653] text-base font-semibold rounded-2xl md:w-96 py-2 px-4 mb-5 focus:outline-none placeholder:italic placeholder:text-[#264653] placeholder:text-base placeholder:font-semibold placeholder:opacity-60 bg-[#f4a261] border-[3px] vsm:w-60'
             placeholder='naval@athens.com'
             id='email'
             {...register('email')} />
@@ -57,11 +57,11 @@ const AddData = ({ onSubmit }: FormProps) => {
 
         {/* body input field */}
         <div className=' flex flex-col items-start'>
-          <label className='text-start text-4xl font-bold italic text-[#264653] py-3' htmlFor='body'>
+          <label className='text-start md:text-4xl font-bold italic text-[#264653] md:py-2 vsm:text-3xl vsm:pb-1' htmlFor='body'>
             Body
           </label>
           <input type='text'
-            className=' border-[#264653] text-[#264653] text-base font-semibold rounded-2xl md:w-[570px] py-2 pb-12 px-4 mb-5 focus:outline-non placeholder:italic placeholder:text-[#264653] placeholder:text-base placeholder:font-semibold placeholder:opacity-60 bg-[#f4a261] border-[3px] vsm:w-full focus:outline-none'
+            className=' border-[#264653] text-[#264653] text-base font-semibold rounded-2xl md:w-[570px] py-2 pb-12 px-4 mb-5 focus:outline-non placeholder:italic placeholder:text-[#264653] placeholder:text-base placeholder:font-semibold placeholder:opacity-60 bg-[#f4a261] border-[3px] vsm:w-60 focus:outline-none whitespace-normal placeholder:whitespace-normal'
             placeholder='greatest angel investor + modern day philosopher and entreprenuer...'
             id='body'
             {...register('body')} />
