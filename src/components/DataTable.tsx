@@ -1,10 +1,5 @@
+import { Data } from "../entities/Data";
 
-export interface Data {
-    id: number;
-    name: string;
-    email: string;
-    body: string
-}
 
 interface DataProps {
     updatedData: Data[];

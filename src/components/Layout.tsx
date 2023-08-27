@@ -1,17 +1,13 @@
 import { produce } from 'immer';
 import { useEffect, useState } from 'react'
 import AddData from './AddData';
-import DataTable, { Data } from './DataTable';
+import DataTable from './DataTable';
 import SearchData from './SearchData';
 import useData from '../hooks/useData';
 import LoadingIndicator from './LoadingIndicator';
+import { SubmittedData } from '../entities/SubmittedData';
+import { Data } from '../entities/Data';
 
-
-interface SubmittedData {
-    name: string;
-    email: string;
-    body: string;
-}
 
 const Layout = () => {
 
