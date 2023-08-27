@@ -8,7 +8,6 @@ export interface Data {
 
 interface DataProps {
     updatedData: Data[];
-    onUpdate?: (data: Data[]) => void;
     onDelete: (id: number) => void;
 }
 
