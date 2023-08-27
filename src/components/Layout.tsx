@@ -4,6 +4,7 @@ import AddData from './AddData';
 import DataTable, { Data } from './DataTable';
 import SearchData from './SearchData';
 import useData from '../hooks/useData';
+import LoadingIndicator from './LoadingIndicator';
 
 
 interface SubmittedData {
@@ -14,15 +15,10 @@ interface SubmittedData {
 
 const Layout = () => {
 
-    const { data: fetchedData, isFetching, status, error } = useData();
+    const { data: fetchedData, isFetching, status } = useData();
 
     const [data, setData] = useState<Data[] | []>([]);
     const [filteredData, setFilteredData] = useState<Data[] | []>([])
-    if (error) {
-        console.log(error)
-    }
-
-    console.log(fetchedData);
 
     useEffect(() => {
         if (status === 'success') {
@@ -59,9 +55,7 @@ const Layout = () => {
     return (
         <>
             {isFetching ?
-                <div className=' h-screen bg-[#f6bd60] grid place-items-center text-5xl italic font-bold text-[#264653]'>
-                    Loading..
-                </div>
+                <LoadingIndicator />
                 : status === 'success' &&
                 <div className=' h-fit bg-[#f6bd60] vsm:px-5 md:px-12 md:py-10 vsm:py-5'>
                     <div>
