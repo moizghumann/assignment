@@ -12,7 +12,6 @@ interface DataProps {
 }
 
 const DataTable = ({ updatedData, onDelete }: DataProps) => {
-    // had to provide an empty array as dependency here since using the updatedData causes a re-render and deleted entry is replaced again from the api endpoint fetch (since deletion doesnt actually delete an entry from the jsonplaceholder data and only manipulates the entries on local session)
 
     return (
         <div className="relative overflow-x-auto shadow-2xl sm:rounded-3xl vsm:rounded-2xl mt-28 border-4 border-[#264653]">
