@@ -1,8 +1,9 @@
 import { produce } from 'immer';
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import AddData from './AddData';
 import DataTable, { Data } from './DataTable';
 import SearchData from './SearchData';
+import useData from '../hooks/useData';
 
 
 interface SubmittedData {
@@ -12,8 +13,22 @@ interface SubmittedData {
 }
 
 const Layout = () => {
+
+    const { data: fetchedData, isFetching, status, error } = useData();
+
     const [data, setData] = useState<Data[] | []>([]);
     const [filteredData, setFilteredData] = useState<Data[] | []>([])
+    if (error) {
+        console.log(error)
+    }
+
+    console.log(fetchedData);
+
+    useEffect(() => {
+        if (status === 'success') {
+            setData(fetchedData);
+        }
+    }, [fetchedData, status]);
 
     // handling the newly added info and updating the state
     const handleAddData = (newData: SubmittedData) => {
@@ -43,19 +58,21 @@ const Layout = () => {
 
     return (
         <>
-            <div className=' h-fit bg-[#f6bd60] vsm:px-5 md:px-12 md:py-10 vsm:py-5'>
-                <div>
-                    <SearchData onSearch={handleSearch} />
-                    <AddData onSubmit={handleAddData} />
+            {isFetching ?
+                <div className=' h-screen bg-[#f6bd60] grid place-items-center text-5xl italic font-bold text-[#264653]'>
+                    Loading..
                 </div>
+                : status === 'success' &&
+                <div className=' h-fit bg-[#f6bd60] vsm:px-5 md:px-12 md:py-10 vsm:py-5'>
+                    <div>
+                        <SearchData onSearch={handleSearch} />
+                        <AddData onSubmit={handleAddData} />
+                    </div>
 
-                <DataTable updatedData={filteredData.length > 0 ? filteredData : data}
-                    onUpdate={(fetched) => setData(fetched)}
-                    onDelete={handleDelete} />
-
-
-            </div>
-
+                    <DataTable updatedData={filteredData.length > 0 ? filteredData : data}
+                        onDelete={handleDelete}
+                    />
+                </div>}
         </>
     )
 }

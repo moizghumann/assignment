@@ -1,41 +1,23 @@
-import { useEffect } from 'react';
 
 export interface Data {
     id: number;
-    name?: string;
-    email?: string;
-    body?: string
+    name: string;
+    email: string;
+    body: string
 }
 
 interface DataProps {
     updatedData: Data[];
-    onUpdate: (data: Data[]) => void;
+    onUpdate?: (data: Data[]) => void;
     onDelete: (id: number) => void;
 }
 
-const DataTable = ({ onUpdate, updatedData, onDelete }: DataProps) => {
-
-    async function fetchData() {
-        try {
-            const response = await fetch('https://jsonplaceholder.typicode.com/posts/1/comments');
-            const jsonData = await response.json();
-            return jsonData;
-        } catch (error) {
-            console.error('Error fetching data:', error);
-            return [];
-        }
-    }
-
+const DataTable = ({ updatedData, onDelete }: DataProps) => {
     // had to provide an empty array as dependency here since using the updatedData causes a re-render and deleted entry is replaced again from the api endpoint fetch (since deletion doesnt actually delete an entry from the jsonplaceholder data and only manipulates the entries on local session)
-    useEffect(() => {
-        fetchData().then((fetchedData) => {
-            onUpdate(fetchedData);
-        });
-    }, []);
 
     return (
         <div className="relative overflow-x-auto shadow-2xl sm:rounded-3xl vsm:rounded-2xl mt-28 border-4 border-[#264653]">
-            <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 table-auto">
+            <table className="w-full text-sm text-left text-gray-500 dark:text-gray-300 md:text-opacity-80 vsm:text-opacity-80 table-auto">
                 <thead className=" text-[#fefae0] uppercase bg-[#2a9d8f] font-bold text-xl">
                     <tr>
                         <th scope="col" className="px-6 py-3">
@@ -59,7 +41,7 @@ const DataTable = ({ onUpdate, updatedData, onDelete }: DataProps) => {
                 </thead>
                 <tbody>
 
-                    {updatedData.map(eachItem =>
+                    {updatedData?.map(eachItem =>
                         <tr key={eachItem.id} className="bg-[#264653] border-b text-base">
                             <td className="px-6 py-4 whitespace-pre-wrap">{eachItem.id}</td>
                             <td className="px-6 py-4 whitespace-pre-wrap">{eachItem.name}</td>
